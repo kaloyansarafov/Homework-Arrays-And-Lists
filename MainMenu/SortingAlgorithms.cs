@@ -74,11 +74,11 @@ namespace Arithmetics
         public static int[] RandomArrayCreator(int g, int o, int k)
         {
             int[] a = new int[g];
-                for (int j = 0; j < g; j++)
-                {
-                    Random rnd = new Random();
-                    a[j] = rnd.Next(o, k);
-                }
+            for (int j = 0; j < g; j++)
+            {
+                Random rnd = new Random();
+                a[j] = rnd.Next(o, k);
+            }
             return a;
         }
     }
