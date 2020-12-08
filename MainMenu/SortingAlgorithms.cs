@@ -15,6 +15,15 @@ namespace Arithmetics
             data[m] = data[n];
             data[n] = temporary;
         }
+
+        public static void ListExchange(List<int> data, int m, int n)
+        {
+            int temporary;
+
+            temporary = data[m];
+            data[m] = data[n];
+            data[n] = temporary;
+        }
         //bubble sort
         public static void IntArrayBubbleSort(int[] data)
         {

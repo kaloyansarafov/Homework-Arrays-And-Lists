@@ -12,14 +12,14 @@ namespace Arithmetics
         public static void Option1()
         {
             int n = int.Parse(Console.ReadLine());
-            int[] a = new int[n];
-            for (int i = 0; i < a.Length; i++)
-                a[i] = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = int.Parse(Console.ReadLine());
             
-            Console.Write(a.Sum() + " ");
-            Console.Write(a.Max() + " ");
-            Console.Write(a.Min() + " ");
-            Console.Write(a.Average() + " ");
+            Console.Write(arr.Sum() + " ");
+            Console.Write(arr.Max() + " ");
+            Console.Write(arr.Min() + " ");
+            Console.Write(arr.Average() + " ");
         }
         
         public static void Option2()
@@ -44,28 +44,25 @@ namespace Arithmetics
         public static void Option3()
         {
             int n = int.Parse(Console.ReadLine());
-            List<int> a = new List<int>();
+            List<int> list = new List<int>();
             while (n != -1)
             {
-                a.Add(n);
+                list.Add(n);
                 n = int.Parse(Console.ReadLine());
             }
             List<int> b = new List<int>();
-            for (int i = 0; i < a.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                for (int g = a.Count - 2; g >= 0; g--)
+                for (int g = list.Count - 2; g >= 0; g--)
                 {
-                    if (a[g] > a[g + 1])
+                    if (list[g] > list[g + 1])
                     {
-                        int u;
-                        u = a[g + 1];
-                        a[g + 1] = a[g];
-                        a[g] = u;
+                        SortingAlgorithms.ListExchange(list, g, g + 1);
                     }
                 }
             }
-            for (int i = 0; i < a.Count; i++)
-                Console.Write(a[i] + " ");
+            for (int i = 0; i < list.Count; i++)
+                Console.Write(list[i] + " ");
         }
 
         public static void Option4()
