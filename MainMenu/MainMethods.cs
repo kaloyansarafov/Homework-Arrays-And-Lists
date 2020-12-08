@@ -16,10 +16,10 @@ namespace Arithmetics
             for (int i = 0; i < arr.Length; i++)
                 arr[i] = int.Parse(Console.ReadLine());
             
-            Console.Write(arr.Sum() + " ");
-            Console.Write(arr.Max() + " ");
-            Console.Write(arr.Min() + " ");
-            Console.Write(arr.Average() + " ");
+            Console.Write("Sum: " + arr.Sum() + " ");
+            Console.Write("Max: " + arr.Max() + " ");
+            Console.Write("Min: " + arr.Min() + " ");
+            Console.Write("Avg: " + arr.Average() + " ");
         }
         
         public static void Option2()
@@ -67,16 +67,22 @@ namespace Arithmetics
 
         public static void Option4()
         {
-            List<int> a = Console.ReadLine().Split(", ").Select(x => int.Parse(x)).ToList();
-            a.Remove(a.Min());
-            Console.WriteLine(a.Min());
-            a.Remove(a.Max());
-            Console.WriteLine(a.Max());
+            List<int> list = Console.ReadLine()
+                .Split(", ")
+                .Select(x => int.Parse(x))
+                .ToList();
+            list.Remove(list.Min());
+            Console.WriteLine(list.Min());
+            list.Remove(list.Max());
+            Console.WriteLine(list.Max());
         }
 
         public static void Option5()
         {
-            List<double> a = Console.ReadLine().Split(", ").Select(x => double.Parse(x)).ToList();
+            List<double> a = Console.ReadLine()
+                .Split(", ")
+                .Select(x => double.Parse(x))
+                .ToList();
             List<double> b = new List<double>();
             double current;
             for (int i = 0; i < a.Count; i++)
@@ -120,7 +126,9 @@ namespace Arithmetics
             double spanbubble = (DateTime.Now - StartTime).TotalSeconds;
             Console.WriteLine("Bubble Sort Time: " + spanbubble + " seconds.");
 
+
             DateTime InsertionStartTime = DateTime.Now;
+
             arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
@@ -133,7 +141,9 @@ namespace Arithmetics
             double spaninsertion = (DateTime.Now - InsertionStartTime).TotalSeconds;
             Console.WriteLine("Insertion Sort Time: " + spaninsertion + " seconds.");
 
+
             DateTime SelectionStartTime = DateTime.Now;
+
             arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
@@ -142,10 +152,13 @@ namespace Arithmetics
             SortingAlgorithms.IntArraySelectionSort(arr2);
             SortingAlgorithms.IntArraySelectionSort(arr3);
             SortingAlgorithms.IntArraySelectionSort(arr4);
+
             double spanselection = (DateTime.Now - SelectionStartTime).TotalSeconds;
             Console.WriteLine("Selection Sort Time: " + spanselection + " seconds.");
 
+
             DateTime SortStartTime = DateTime.Now;
+
             arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
             arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
@@ -154,8 +167,10 @@ namespace Arithmetics
             Array.Sort(arr2);
             Array.Sort(arr3);
             Array.Sort(arr4);
+
             double spansort = (DateTime.Now - SortStartTime).TotalSeconds;
             Console.WriteLine("Array Sort Time: " + spansort + " seconds.");
+
 
             double span = (DateTime.Now - StartTime).TotalSeconds;
             Console.WriteLine("Total Time: " + span + " seconds.");
@@ -165,6 +180,11 @@ namespace Arithmetics
             string egn = Console.ReadLine();
             char[] egnchars = egn.ToCharArray();
             int[] egnarray = Array.ConvertAll(egnchars, c => (int)Char.GetNumericValue(c));
+            if (egn.Length != 10)
+            {
+                Console.WriteLine("Inserted EGN is not of the correct length.");
+                return false;
+            }
             if (EGNMethods.IsAllDigits(egn) == false)
             {
                 return false;
