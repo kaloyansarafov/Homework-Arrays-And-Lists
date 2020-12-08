@@ -28,10 +28,10 @@ namespace Arithmetics
             int m = int.Parse(Console.ReadLine());
             if (m > n)
             {
-                int b;
-                b = n;
+                int temp;
+                temp = n;
                 n = m;
-                m = b;
+                m = temp;
             }
             int[] arr = SortingAlgorithms.RandomArrayCreator(100, m, n);
             for (int i = 0; i < 10; i++)
