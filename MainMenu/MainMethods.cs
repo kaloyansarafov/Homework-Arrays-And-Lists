@@ -115,13 +115,10 @@ namespace Arithmetics
             DateTime StartTime = DateTime.Now;
 
             int[] arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            int[] arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            int[] arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            int[] arr4 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
+            int[] arr2 = arr1;
+            int[] arr3 = arr1;
+            int[] arr4 = arr1;
             SortingAlgorithms.IntArrayBubbleSort(arr1);
-            SortingAlgorithms.IntArrayBubbleSort(arr2);
-            SortingAlgorithms.IntArrayBubbleSort(arr3);
-            SortingAlgorithms.IntArrayBubbleSort(arr4);
 
             double spanbubble = (DateTime.Now - StartTime).TotalSeconds;
             Console.WriteLine("Bubble Sort Time: " + spanbubble + " seconds.");
@@ -129,14 +126,7 @@ namespace Arithmetics
 
             DateTime InsertionStartTime = DateTime.Now;
 
-            arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr4 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            SortingAlgorithms.IntArrayInsertionSort(arr1);
             SortingAlgorithms.IntArrayInsertionSort(arr2);
-            SortingAlgorithms.IntArrayInsertionSort(arr3);
-            SortingAlgorithms.IntArrayInsertionSort(arr4);
 
             double spaninsertion = (DateTime.Now - InsertionStartTime).TotalSeconds;
             Console.WriteLine("Insertion Sort Time: " + spaninsertion + " seconds.");
@@ -144,14 +134,7 @@ namespace Arithmetics
 
             DateTime SelectionStartTime = DateTime.Now;
 
-            arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr4 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            SortingAlgorithms.IntArraySelectionSort(arr1);
-            SortingAlgorithms.IntArraySelectionSort(arr2);
             SortingAlgorithms.IntArraySelectionSort(arr3);
-            SortingAlgorithms.IntArraySelectionSort(arr4);
 
             double spanselection = (DateTime.Now - SelectionStartTime).TotalSeconds;
             Console.WriteLine("Selection Sort Time: " + spanselection + " seconds.");
@@ -159,13 +142,6 @@ namespace Arithmetics
 
             DateTime SortStartTime = DateTime.Now;
 
-            arr1 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr2 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr3 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            arr4 = SortingAlgorithms.RandomArrayCreator(100000, -100, 100);
-            Array.Sort(arr1);
-            Array.Sort(arr2);
-            Array.Sort(arr3);
             Array.Sort(arr4);
 
             double spansort = (DateTime.Now - SortStartTime).TotalSeconds;
