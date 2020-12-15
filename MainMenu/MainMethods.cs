@@ -94,7 +94,6 @@ namespace Arithmetics
                     {
                         if (b.Contains(a[i]))
                             break;
-
                         else
                         {
                             b.Add(a[i]);
